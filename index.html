@@ -1,238 +1,713 @@
 <!DOCTYPE html>
-<html">
-<html lang="lt">
+<html lang="zxx">
 
   <head>
     <!--Liutauras-->
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Programvimo Projektas</title>
     <link rel="stylesheet" href="styles.css">
+    
+    
+    
   </head>
 
   <body>
+    <script src="functions.js" defer></script>
+    <!-- Side Bar-->
+    <button id="toggle-sidebar" aria-label="Toggle Sidebar">
+      ☰
+    </button>
+
+    <button id="Scroll-Up">^</button>
+
+    
+    <nav id="nav-sidebar">
+      <div id="Profile" class="sidebar">
+        <img src="../img/my-profile-img.jpg" alt="selfie">
+        <a id="Username" href="">Alex Smith</a>
+
+        <nav class="nav-icons">
+          <a href="https://x.com/" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+              fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16">
+              <path
+                d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z" />
+            </svg>
+          </a>
+
+          <a href="https://facebook.com" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+              fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+              <path
+                d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951" />
+            </svg>
+          </a>
+
+          <a href="https://instagram.com" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+              fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+              <path
+                d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
+            </svg>
+          </a>
+
+          <a href="https://skype.com" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+              fill="currentColor" class="bi bi-skype" viewBox="0 0 16 16">
+              <path
+                d="M4.671 0c.88 0 1.733.247 2.468.702a7.42 7.42 0 0 1 6.02 2.118 7.37 7.37 0 0 1 2.167 5.215q0 .517-.072 1.026a4.66 4.66 0 0 1 .6 2.281 4.64 4.64 0 0 1-1.37 3.294A4.67 4.67 0 0 1 11.18 16c-.84 0-1.658-.226-2.37-.644a7.42 7.42 0 0 1-6.114-2.107A7.37 7.37 0 0 1 .529 8.035q0-.545.08-1.081a4.644 4.644 0 0 1 .76-5.59A4.68 4.68 0 0 1 4.67 0zm.447 7.01c.18.309.43.572.729.769a7 7 0 0 0 1.257.653q.737.308 1.145.523c.229.112.437.264.615.448.135.142.21.331.21.528a.87.87 0 0 1-.335.723c-.291.196-.64.289-.99.264a2.6 2.6 0 0 1-1.048-.206 11 11 0 0 1-.532-.253 1.3 1.3 0 0 0-.587-.15.72.72 0 0 0-.501.176.63.63 0 0 0-.195.491.8.8 0 0 0 .148.482 1.2 1.2 0 0 0 .456.354 5.1 5.1 0 0 0 2.212.419 4.6 4.6 0 0 0 1.624-.265 2.3 2.3 0 0 0 1.08-.801c.267-.39.402-.855.386-1.327a2.1 2.1 0 0 0-.279-1.101 2.5 2.5 0 0 0-.772-.792A7 7 0 0 0 8.486 7.3a1 1 0 0 0-.145-.058 18 18 0 0 1-1.013-.447 1.8 1.8 0 0 1-.54-.387.73.73 0 0 1-.2-.508.8.8 0 0 1 .385-.723 1.76 1.76 0 0 1 .968-.247c.26-.003.52.03.772.096q.412.119.802.293c.105.049.22.075.336.076a.6.6 0 0 0 .453-.19.7.7 0 0 0 .18-.496.72.72 0 0 0-.17-.476 1.4 1.4 0 0 0-.556-.354 3.7 3.7 0 0 0-.708-.183 6 6 0 0 0-1.022-.078 4.5 4.5 0 0 0-1.536.258 2.7 2.7 0 0 0-1.174.784 1.9 1.9 0 0 0-.45 1.287c-.01.37.076.736.25 1.063" />
+            </svg>
+          </a>
+
+          <a href="https://linkedin.com" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+              fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+              <path
+                d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z" />
+            </svg>
+          </a>
+        </nav>
+      </div>
+
+      <nav class="nav-pages">
+
+        <div class="nav-group">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+            fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+            <path
+              d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z" />
+          </svg>
+          <a href="">Home</a>
+        </div>
+
+        <div class="nav-group">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+            fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+            <path
+              d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z" />
+          </svg>
+          <a href="">About</a>
+        </div>
+
+        <div class="nav-group">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+            fill="currentColor" class="bi bi-file-earmark-text"
+            viewBox="0 0 16 16">
+            <path
+              d="M5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5" />
+            <path
+              d="M9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.5zm0 1v2A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z" />
+          </svg>
+          <a href="">Resume</a>
+        </div>
+
+        <div class="nav-group">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+            fill="currentColor" class="bi bi-images" viewBox="0 0 16 16">
+            <path d="M4.502 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3" />
+            <path
+              d="M14.002 13a2 2 0 0 1-2 2h-10a2 2 0 0 1-2-2V5A2 2 0 0 1 2 3a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v8a2 2 0 0 1-1.998 2M14 2H4a1 1 0 0 0-1 1h9.002a2 2 0 0 1 2 2v7A1 1 0 0 0 15 11V3a1 1 0 0 0-1-1M2.002 4a1 1 0 0 0-1 1v8l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094l1.777 1.947V5a1 1 0 0 0-1-1z" />
+          </svg>
+          <a href="">Portfolio</a>
+        </div>
+      </nav>
+    </nav>
+
     <main>
+      <!-- Header page-->
+      <header>
+        <div id="header-text">
+          <h1>Alex Smith</h1>
+          <p>I'm <u>developer</u></p>
+        </div>
+        <img src="../img/hero-bg.jpg" alt="jacket wearing man">
+      </header>
 
-      <!-- Side Bar-->
-      <img src="../img/my-profile-img.jpg" alt="selfie">
-      <a href="">Alex Smith</a>
-      <a href="https://x.com/" target="_blank">
-        <img src="../img/twitter-x.svg" alt="Twitter Icon">
-      </a>
-      
-      <a href="https://facebook.com" target="_blank">
-        <img src="../img/facebook.svg" alt="Twitter Icon">
-      </a>
+      <!--Page 1 about-->
+      <section id="Page-1">
+        
 
-      <a href="https://instagram.com" target="_blank">
-        <img src="../img/instagram.svg" alt="Instagram Icon">
-      </a>
+        <div class="container-title">
+          <h2>About</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id
+            consequatur ipsa a cupiditate sed at amet. Maxime, odit enim ratione
+            distinctio fugit impedit nostrum voluptatum quam saepe quis cumque
+            eius.</p>
+        </div>
 
-      <a href="https://skype.com" target="_blank">
-        <img src="../img/skype.svg" alt="Skype Icon">
-      </a>
-      
-      <a href="https://linkedin.com" target="_blank">
-        <img src="../img/linkedin.svg" alt="Linkedin Icon">
-      </a>
-      
+        <div class="about-container">
+          <div id="About-selfie">
+            <img src="../img/my-profile-img.jpg" alt="selfie">
+          </div>
 
-      <img src="../img/house.svg" alt="House Icon">
-      <a href="">Home</a>
-      
+          <div id="About-about">
+            <h2>UI/UX Designer & Web Developer.</h2>
+            <p><em>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                do eiusmod tempor incididunt ut labore et dolore magna
+                aliqua.</em></p>
 
-      <img src="../img/person.svg" alt="Person Icon">
-      <a href="">About</a>
-      
+            <ul>
+              <li><p><b>Birthday:</b> 1 May 1995</p></li>
+              <li><p><b>Website:</b> www.example.com</p></li>
+              <li><p><b>Phone:</b> +123 456 7890</p></li>
+              <li><p><b>City:</b> New York, USA</p></li>
+              <li><p><b>Age:</b> 30</p></li>
+              <li><p><b>Degree:</b> Master</p></li>
+              <li><p><b>Email:</b> email@example.com</p></li>
+              <li><p><b>Freelance:</b> Available</p></li>
+            </ul>
 
-      <img src="../img/file-earmark-text.svg" alt="Earmark Icon">
-      <a href="">Resume</a>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Dignissimos corrupti magnam, molestiae dolorum architecto nam
+              nostrum, mollitia dicta facere expedita iste excepturi in aliquam,
+              reiciendis totam vero quod saepe debitis?</p>
+          </div>
+        </div>
+      </section>
+      <section id="stats-section">
+        <div class="stats-container">
+          <div class="stat">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+              fill="currentColor" class="bi bi-emoji-smile" viewBox="0 0 16 16">
+              <path
+                d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+              <path
+                d="M4.285 9.567a.5.5 0 0 1 .683.183A3.5 3.5 0 0 0 8 11.5a3.5 3.5 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.5 4.5 0 0 1 8 12.5a4.5 4.5 0 0 1-3.898-2.25.5.5 0 0 1 .183-.683M7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5m4 0c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S9.448 5 10 5s1 .672 1 1.5" />
+            </svg>
+            <h2>232</h2>
+            <p><b>Happy Clients</b></p>
+            <p>Consequuntur quae</p>
+          </div>
+          <div class="stat">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+              fill="currentColor" class="bi bi-journal-richtext"
+              viewBox="0 0 16 16">
+              <path
+                d="M7.5 3.75a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0m-.861 1.542 1.33.886 1.854-1.855a.25.25 0 0 1 .289-.047L11 4.75V7a.5.5 0 0 1-.5.5h-5A.5.5 0 0 1 5 7v-.5s1.54-1.274 1.639-1.208M5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5" />
+              <path
+                d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2" />
+              <path
+                d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1z" />
+            </svg>
+            <h2>521</h2>
+            <p><b>Projects</b></p>
+            <p>Adipisci atque cum quia aut</p>
+          </div>
+          <div class="stat">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+              fill="currentColor" class="bi bi-headset" viewBox="0 0 16 16">
+              <path
+                d="M8 1a5 5 0 0 0-5 5v1h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a6 6 0 1 1 12 0v6a2.5 2.5 0 0 1-2.5 2.5H9.366a1 1 0 0 1-.866.5h-1a1 1 0 1 1 0-2h1a1 1 0 0 1 .866.5H11.5A1.5 1.5 0 0 0 13 12h-1a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h1V6a5 5 0 0 0-5-5" />
+            </svg>
+            <h2>1453</h2>
+            <p><b>Hours Of Support</b></p>
+            <p>Aut commodi quaerat</p>
+          </div>
+          <div class="stat">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+              fill="currentColor" class="bi bi-people" viewBox="0 0 16 16">
+              <path
+                d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1zm-7.978-1L7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002-.014.002zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4m3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0M6.936 9.28a6 6 0 0 0-1.23-.247A7 7 0 0 0 5 9c-4 0-5 3-5 4q0 1 1 1h4.216A2.24 2.24 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816M4.92 10A5.5 5.5 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0m3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4" />
+            </svg>
+            <h2>32</h2>
+            <p><b>Hard Workers</b></p>
+            <p>Rerum asperiores dolor</p>
+          </div>
+        </div>
+      </section>
 
-      <img src="../img/images.svg" alt="Person Icon">
-      <a href="">Portfolio</a>
-
-      <!-- First page-->
-      <h1>Alex Smith</h1>
-      <p>I'm a developer</p>
-      <img src="../img/hero-bg.jpg" alt="jacket wearing man">
-
-      <!-- Second page about-->
-      <h2>About</h2>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id consequatur ipsa a cupiditate sed at amet. Maxime, odit enim ratione distinctio fugit impedit nostrum voluptatum quam saepe quis cumque eius.</p>
-      <img src="../img/my-profile-img.jpg" alt="selfie">
-
-      <h2>UI/UX Designer & Web Developer.</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-
-      <b>Birthday: </b>
-      <p>1 May 1995</p>
-
-      <b>Website: </b>
-      <p>www.example.com</p>
-
-      <b>Phone: </b>
-      <p>+123 456 7890</p>
-
-      <b>City: </b>
-      <p>New York, USA</p>
-
-      <b>Age: </b>
-      <p>30</p>
-
-      <b>Degree: </b>
-      <p>Master</p>
-
-      <b>Email: </b>
-      <p>email@example.com</p>
-
-      <b>Freelance: </b>
-      <p>Available</p>
-
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos corrupti magnam, molestiae dolorum architecto nam nostrum, mollitia dicta facere expedita iste excepturi in aliquam, reiciendis totam vero quod saepe debitis?</p>
-
-      <img src="../img/emoji-smile.svg" alt="emoji smile icon">
-      <h2>232</h2>
-      <b>Happy Clients</b>
-      <p>Consequuntur quaer</p>
-
-      <img src="../img/journal-richtext.svg" alt="journal with text icon">
-      <h2>521</h2>
-      <b>Projects</b>
-      <p>adipisci atque cum quia aut</p>
-
-      <img src="../img/headset.svg" alt="headset icon">
-      <h2>1453</h2>
-      <b>Hours Of Supports</b>
-      <p>aut commodi quaerat</p>
-
-      <p><img src="../img/people.svg" alt="people icon">
-      <h2>32</h2>
-      <b>Hard Workers</b>
-      <p>adipisci atque cum quia aut</p>
-
-      <h2>Skills</h2>
-      <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      <p>HTML</p>
-      <p>100%</p>
-      <p>CSS</p>
-      <p>90%</p>
-      <p>JAVASCRIPT</p>
-      <p>75%</p>
-      <p>PHP</p>
-      <p>80%</p>
-      <p>WORDPRESS/CMS</p>
-      <p>90%</p>
-      <p>PHOTOSHOP</p>
-      <p>55%</p>
+      <section id="skills-section">
+        <div class="container-title">
+          <h2>Skills</h2>
+          <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
+            consectetur velit</p>
+        </div>
+        <div class="skills-container">
+          <div class="skill">
+            <p>HTML <span>100%</span></p>
+            <div class="progress-bar">
+              <div class="progress" style="width: 100%;"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <p>CSS <span>90%</span></p>
+            <div class="progress-bar">
+              <div class="progress" style="width: 90%;"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <p>JavaScript <span>75%</span></p>
+            <div class="progress-bar">
+              <div class="progress" style="width: 75%;"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <p>PHP <span>80%</span></p>
+            <div class="progress-bar">
+              <div class="progress" style="width: 80%;"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <p>WordPress/CMS <span>90%</span></p>
+            <div class="progress-bar">
+              <div class="progress" style="width: 90%;"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <p>Photoshop <span>55%</span></p>
+            <div class="progress-bar">
+              <div class="progress" style="width: 55%;"></div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <!-- Third page Resume-->
-      <h2>Resume</h2>
-      <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+      <section id="resume-section">
+        <div class="container-title">
+          <h2>Resume</h2>
+          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex
+            aliquid fuga eum quidem Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam, velit! Corrupti molestias minima quasi tempora commodi qui rem, sint ad quae distinctio debitis quas sit, veniam ipsum perspiciatis iure! Sit.</p>
+        </div>
 
-      <h2>Sumary</h2>
-      <p>BRANDON JOGNSON</p>
-      <p>Innovative and deadline-driven Graphic Designer with 3+ years of experience designing and developing user-centered digital/print marketing material from initial concept to final, polished deliverable.</p>
-      <p>Portland par 127,Orlando, FL</p>
-      <p>(123) 456-7891</p>
-      <p>alice.barkley@example.com</p>
+        <div class="resume-container">
+          <!-- Left Column -->
+          <div class="resume-column">
+            <h3>Summary</h3>
+            <div class="timeline-item">
+              <div class="timeline-icon"></div>
+              <div class="timeline-content">
+                <h4>BRANDON JOHNSON</h4>
+                <p><em>Innovative and deadline-driven Graphic Designer with 3+ years of experience designing and developing user-centered digital/print marketing material from initial concept to final, polished deliverable.</em></p>
+                <ul>
+                  <li>Portland par 127, Orlando, FL</li>
+                  <li>(123) 456-7891</li>
+                  <li>alice.barkley@example.com</li>
+                </ul>
+              </div>
+            </div>
 
-      <h2>Education</h2>
+            <h3>Education</h3>
+            <div class="timeline-item">
+              <div class="timeline-icon"></div>
+              <div class="timeline-content">
+                <h4>MASTER OF FINE ARTS & GRAPHIC DESIGN</h4>
+                <span>2015 - 2016</span>
+                <p>Rochester Institute of Technology, Rochester, NY</p>
+                <p>Qui deserunt veniam. Et sed aliquam labore tempore sed quisquam iusto autem sit. Ea vero voluptatum qui ut dignissimos deleniti nerada porti sand markend</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-icon"></div>
+              <div class="timeline-content">
+                <h4>BACHELOR OF FINE ARTS & GRAPHIC DESIGN</h4>
+                <span>2010 - 2014</span>
+                <p>Rochester Institute of Technology, Rochester, NY</p>
+                <p>Quia nobis sequi est occaecati aut. Repudiandae et iusto quae reiciendis et quis Eius vel ratione eius unde vitae rerum voluptates asperiores voluptatem Earum molestiae consequatur neque etlon sader mart dila</p>
+              </div>
+            </div>
+          </div>
 
-      <p>MASTER OF FINE ARTS & GRAPHIC DESIGN</p>
-      <b>2015 - 2016</b>
-      <p>Rochester Institute of Technology, Rochester, NY</p>
-      <p>Qui deserunt veniam. Et sed aliquam labore tempore sed quisquam iusto autem sit. Ea vero voluptatum qui ut dignissimos deleniti nerada porti sand markend</p>
+          <!-- Right Column -->
+          <div class="resume-column">
+            <h3>Professional Experience</h3>
+            <div class="timeline-item">
+              <div class="timeline-icon"></div>
+              <div class="timeline-content">
+                <h4>SENIOR GRAPHIC DESIGN SPECIALIST</h4>
+                <span>2019 - Present</span>
+                <p>Experion, New York, NY</p>
+                <ul>
+                  <li>Lead in the design, development, and implementation of the graphic, layout, and production communication materials</li>
+                  <li>Delegate tasks to the 7 members of the design team and provide counsel on all aspects of the project.</li>
+                  <li>Supervise the assessment of all graphic materials in order to ensure quality and accuracy of the design</li>
+                  <li>Oversee the efficient use of production project budgets ranging from $2,000 - $25,000</li>
+                </ul>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-icon"></div>
+              <div class="timeline-content">
+                <h4>GRAPHIC DESIGN SPECIALIST</h4>
+                <span>2017 - 2018</span>
+                <p>Stepping Stone Advertising, New York, NY</p>
+                <ul>
+                  <li>Developed numerous marketing programs (logos, brochures,infographics, presentations, and advertisements).</li>
+                  <li>Managed up to 5 projects or tasks at a given time while under pressure</li>
+                  <li>Recommended and consulted with clients on the most appropriate graphic design</li>
+                  <li>Created 4+ design presentations and proposals a month for clients and account managers</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      <p>MASTER OF FINE ARTS & GRAPHIC DESIGN</p>
-      <b>2010 - 2014</b>
-      <p>Rochester Institute of Technology, Rochester, NY</p>
-      <p>Qui deserunt veniam. Et sed aliquam labore tempore sed quisquam iusto autem sit. Ea vero voluptatum qui ut dignissimos deleniti nerada porti sand markend</p>
-
-      <h2>Professional Experience</h2>
-      <p>SENIOR GRAPHIC DESIGN SPECIALIST</p>
-      <p>2019 - Present</p>
-      <p>Experion, New York, NY</p>
-      <p>Lead in the design, development, and implementation of the graphic, layout, and production communication materials</p>
-      <p>Delegate tasks to the 7 members of the design team and provide counsel on all aspects of the project.</p>
-      <p>Supervise the assessment of all graphic materials in order to ensure quality and accuracy of the design</p>
-      <p>Oversee the efficient use of production project budgets ranging from $2,000 - $25,000</p>
-
-      <p>GRAPHIC DESIGN SPECIALIST</p>
-      <p>2017 - 2018</p>
-      <p>Stepping Stone Advertising, New York, NY</p>
-      <p>Developed numerous marketing programs (logos, brochures,infographics, presentations, and advertisements).</p>
-      <p>Managed up to 5 projects or tasks at a given time while under pressure</p>
-      <p>Recommended and consulted with clients on the most appropriate graphic design</p>
-      <p>Created 4+ design presentations and proposals a month for clients and account managers</p>
       <!-- Fourth page Resume-->
+      <section id="portfolio-section">
+        <div class="container">
+          <div class="container-title">
+            <h2>Portfolio</h2>
+            <p>
+              Magnam dolores commodi suscipit. Necessitatibus eius consequatur
+              ex aliquid fuga eum
+              quidem. Sit sint consectetur velit. Quisquam quos quisquam
+              cupiditate. Et nemo qui impedit
+              suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem
+              hic quas.
+            </p>
+            <div class="portfolio-filters">
+              <a href="" class="active">ALL</a>
+              <a href="">APP</a>
+              <a href="">PRODUCT</a>
+              <a href="">BRANDING</a>
+              <a href="">BOOKS</a>
+            </div>
+          </div>
 
-      <h2>Portfolio</h2>
-      <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-      <a href="">ALL</a>
-      <a href="">APP</a>
-      <a href="">PRODUCT</a>
-      <a href="">BRANDING</a>
-      <a href="">BOOKS</a>
-      <img src="../img/portfolio/app-1.jpg">
-      <img src="../img/zoom-in.svg">
-      <img src="../img/link-45deg.svg">
-      <p>Lorem ipsum, dolor sit amet consectetur</p>
+          <div class="portfolio-grid">
+            <div class="portfolio-item">
+              <img src="../img/portfolio/app-1.jpg" alt="App 1">
+              <div class="portfolio-overlay">
+                <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                    fill="currentColor" class="bi bi-zoom-in"
+                    viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                      d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11M13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0" />
+                    <path
+                      d="M10.344 11.742q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1 6.5 6.5 0 0 1-1.398 1.4z" />
+                    <path fill-rule="evenodd"
+                      d="M6.5 3a.5.5 0 0 1 .5.5V6h2.5a.5.5 0 0 1 0 1H7v2.5a.5.5 0 0 1-1 0V7H3.5a.5.5 0 0 1 0-1H6V3.5a.5.5 0 0 1 .5-.5" />
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                    fill="currentColor" class="bi bi-link-45deg"
+                    viewBox="0 0 16 16">
+                    <path
+                      d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z" />
+                    <path
+                      d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z" />
+                  </svg>
+                </div>
+                <p>Lorem ipsum, dolor sit amet consectetur</p>
+              </div>
+            </div>
 
-      <img src="../img/portfolio/product-1.jpg">
-      <img src="../img/zoom-in.svg">
-      <img src="../img/link-45deg.svg">
-      <p>Lorem ipsum, dolor sit amet consectetur</p>
+            <div class="portfolio-item">
+              <img src="../img/portfolio/product-1.jpg" alt="Product 1">
+              <div class="portfolio-overlay">
+                <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                    fill="currentColor" class="bi bi-zoom-in"
+                    viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                      d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11M13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0" />
+                    <path
+                      d="M10.344 11.742q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1 6.5 6.5 0 0 1-1.398 1.4z" />
+                    <path fill-rule="evenodd"
+                      d="M6.5 3a.5.5 0 0 1 .5.5V6h2.5a.5.5 0 0 1 0 1H7v2.5a.5.5 0 0 1-1 0V7H3.5a.5.5 0 0 1 0-1H6V3.5a.5.5 0 0 1 .5-.5" />
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                    fill="currentColor" class="bi bi-link-45deg"
+                    viewBox="0 0 16 16">
+                    <path
+                      d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z" />
+                    <path
+                      d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z" />
+                  </svg>
+                </div>
+                <p>Lorem ipsum, dolor sit amet consectetur</p>
+              </div>
+            </div>
 
-      <img src="../img/portfolio/branding-1.jpg">
-      <img src="../img/zoom-in.svg">
-      <img src="../img/link-45deg.svg">
-      <p>Lorem ipsum, dolor sit amet consectetur</p>
+            <div class="portfolio-item">
+              <img src="../img/portfolio/branding-1.jpg" alt="branding img">
+              <div class="portfolio-overlay">
+                <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                    fill="currentColor" class="bi bi-zoom-in"
+                    viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                      d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11M13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0" />
+                    <path
+                      d="M10.344 11.742q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1 6.5 6.5 0 0 1-1.398 1.4z" />
+                    <path fill-rule="evenodd"
+                      d="M6.5 3a.5.5 0 0 1 .5.5V6h2.5a.5.5 0 0 1 0 1H7v2.5a.5.5 0 0 1-1 0V7H3.5a.5.5 0 0 1 0-1H6V3.5a.5.5 0 0 1 .5-.5" />
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                    fill="currentColor" class="bi bi-link-45deg"
+                    viewBox="0 0 16 16">
+                    <path
+                      d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z" />
+                    <path
+                      d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z" />
+                  </svg>
+                </div>
+                <p>Lorem ipsum, dolor sit amet consectetur</p>
+              </div>
+            </div>
 
-      <img src="../img/portfolio/books-1.jpg">
-      <img src="../img/zoom-in.svg">
-      <img src="../img/link-45deg.svg">
-      <p>Lorem ipsum, dolor sit amet consectetur</p>
+            <div class="portfolio-item">
+              <img src="../img/portfolio/books-1.jpg" alt="books img">
+              <div class="portfolio-overlay">
+                <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                    fill="currentColor" class="bi bi-zoom-in"
+                    viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                      d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11M13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0" />
+                    <path
+                      d="M10.344 11.742q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1 6.5 6.5 0 0 1-1.398 1.4z" />
+                    <path fill-rule="evenodd"
+                      d="M6.5 3a.5.5 0 0 1 .5.5V6h2.5a.5.5 0 0 1 0 1H7v2.5a.5.5 0 0 1-1 0V7H3.5a.5.5 0 0 1 0-1H6V3.5a.5.5 0 0 1 .5-.5" />
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                    fill="currentColor" class="bi bi-link-45deg"
+                    viewBox="0 0 16 16">
+                    <path
+                      d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z" />
+                    <path
+                      d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z" />
+                  </svg>
+                </div>
+                <p>Lorem ipsum, dolor sit amet consectetur</p>
+              </div>
+            </div>
 
-      <img src="../img/portfolio/app-2.jpg">
-      <img src="../img/zoom-in.svg">
-      <img src="../img/link-45deg.svg">
-      <p>Lorem ipsum, dolor sit amet consectetur</p>
+            <div class="portfolio-item">
+              <img src="../img/portfolio/app-2.jpg" alt="app img">
+              <div class="portfolio-overlay">
+                <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                    fill="currentColor" class="bi bi-zoom-in"
+                    viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                      d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11M13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0" />
+                    <path
+                      d="M10.344 11.742q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1 6.5 6.5 0 0 1-1.398 1.4z" />
+                    <path fill-rule="evenodd"
+                      d="M6.5 3a.5.5 0 0 1 .5.5V6h2.5a.5.5 0 0 1 0 1H7v2.5a.5.5 0 0 1-1 0V7H3.5a.5.5 0 0 1 0-1H6V3.5a.5.5 0 0 1 .5-.5" />
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                    fill="currentColor" class="bi bi-link-45deg"
+                    viewBox="0 0 16 16">
+                    <path
+                      d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z" />
+                    <path
+                      d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z" />
+                  </svg>
+                </div>
+                <p>Lorem ipsum, dolor sit amet consectetur</p>
+              </div>
+            </div>
 
-      <img src="../img/portfolio/product-2.jpg">
-      <img src="../img/zoom-in.svg">
-      <img src="../img/link-45deg.svg">
-      <p>Lorem ipsum, dolor sit amet consectetur</p>
+            <div class="portfolio-item">
+              <img src="../img/portfolio/product-2.jpg" alt="product img">
+              <div class="portfolio-overlay">
+                <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                    fill="currentColor" class="bi bi-zoom-in"
+                    viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                      d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11M13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0" />
+                    <path
+                      d="M10.344 11.742q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1 6.5 6.5 0 0 1-1.398 1.4z" />
+                    <path fill-rule="evenodd"
+                      d="M6.5 3a.5.5 0 0 1 .5.5V6h2.5a.5.5 0 0 1 0 1H7v2.5a.5.5 0 0 1-1 0V7H3.5a.5.5 0 0 1 0-1H6V3.5a.5.5 0 0 1 .5-.5" />
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                    fill="currentColor" class="bi bi-link-45deg"
+                    viewBox="0 0 16 16">
+                    <path
+                      d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z" />
+                    <path
+                      d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z" />
+                  </svg>
+                </div>
+                <p>Lorem ipsum, dolor sit amet consectetur</p>
+              </div>
+            </div>
 
-      <img src="../img/portfolio/branding-2.jpg">
-      <img src="../img/zoom-in.svg">
-      <img src="../img/link-45deg.svg">
-      <p>Lorem ipsum, dolor sit amet consectetur</p>
+            <div class="portfolio-item">
+              <img src="../img/portfolio/branding-2.jpg" alt="branding img">
+              <div class="portfolio-overlay">
+                <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                    fill="currentColor" class="bi bi-zoom-in"
+                    viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                      d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11M13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0" />
+                    <path
+                      d="M10.344 11.742q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1 6.5 6.5 0 0 1-1.398 1.4z" />
+                    <path fill-rule="evenodd"
+                      d="M6.5 3a.5.5 0 0 1 .5.5V6h2.5a.5.5 0 0 1 0 1H7v2.5a.5.5 0 0 1-1 0V7H3.5a.5.5 0 0 1 0-1H6V3.5a.5.5 0 0 1 .5-.5" />
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                    fill="currentColor" class="bi bi-link-45deg"
+                    viewBox="0 0 16 16">
+                    <path
+                      d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z" />
+                    <path
+                      d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z" />
+                  </svg>
+                </div>
+                <p>Lorem ipsum, dolor sit amet consectetur</p>
+              </div>
+            </div>
 
-      <img src="../img/portfolio/books-2.jpg">
-      <img src="../img/zoom-in.svg">
-      <img src="../img/link-45deg.svg">
-      <p>Lorem ipsum, dolor sit amet consectetur</p>
+            <div class="portfolio-item">
+              <img src="../img/portfolio/books-2.jpg" alt="books img">
+              <div class="portfolio-overlay">
+                <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                    fill="currentColor" class="bi bi-zoom-in"
+                    viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                      d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11M13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0" />
+                    <path
+                      d="M10.344 11.742q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1 6.5 6.5 0 0 1-1.398 1.4z" />
+                    <path fill-rule="evenodd"
+                      d="M6.5 3a.5.5 0 0 1 .5.5V6h2.5a.5.5 0 0 1 0 1H7v2.5a.5.5 0 0 1-1 0V7H3.5a.5.5 0 0 1 0-1H6V3.5a.5.5 0 0 1 .5-.5" />
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                    fill="currentColor" class="bi bi-link-45deg"
+                    viewBox="0 0 16 16">
+                    <path
+                      d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z" />
+                    <path
+                      d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z" />
+                  </svg>
+                </div>
+                <p>Lorem ipsum, dolor sit amet consectetur</p>
+              </div>
+            </div>
 
-      <img src="../img/portfolio/app-3.jpg">
-      <img src="../img/zoom-in.svg">
-      <img src="../img/link-45deg.svg">
-      <p>Lorem ipsum, dolor sit amet consectetur</p>
+            <div class="portfolio-item">
+              <img src="../img/portfolio/app-3.jpg" alt="app img">
+              <div class="portfolio-overlay">
+                <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                    fill="currentColor" class="bi bi-zoom-in"
+                    viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                      d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11M13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0" />
+                    <path
+                      d="M10.344 11.742q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1 6.5 6.5 0 0 1-1.398 1.4z" />
+                    <path fill-rule="evenodd"
+                      d="M6.5 3a.5.5 0 0 1 .5.5V6h2.5a.5.5 0 0 1 0 1H7v2.5a.5.5 0 0 1-1 0V7H3.5a.5.5 0 0 1 0-1H6V3.5a.5.5 0 0 1 .5-.5" />
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                    fill="currentColor" class="bi bi-link-45deg"
+                    viewBox="0 0 16 16">
+                    <path
+                      d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z" />
+                    <path
+                      d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z" />
+                  </svg>
+                </div>
+                <p>Lorem ipsum, dolor sit amet consectetur</p>
+              </div>
+            </div>
 
-      <img src="../img/portfolio/product-3.jpg">
-      <img src="../img/zoom-in.svg">
-      <img src="../img/link-45deg.svg">
-      <p>Lorem ipsum, dolor sit amet consectetur</p>
+            <div class="portfolio-item">
+              <img src="../img/portfolio/product-3.jpg" alt="product-img">
+              <div class="portfolio-overlay">
+                <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                    fill="currentColor" class="bi bi-zoom-in"
+                    viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                      d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11M13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0" />
+                    <path
+                      d="M10.344 11.742q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1 6.5 6.5 0 0 1-1.398 1.4z" />
+                    <path fill-rule="evenodd"
+                      d="M6.5 3a.5.5 0 0 1 .5.5V6h2.5a.5.5 0 0 1 0 1H7v2.5a.5.5 0 0 1-1 0V7H3.5a.5.5 0 0 1 0-1H6V3.5a.5.5 0 0 1 .5-.5" />
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                    fill="currentColor" class="bi bi-link-45deg"
+                    viewBox="0 0 16 16">
+                    <path
+                      d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z" />
+                    <path
+                      d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z" />
+                  </svg>
+                </div>
+                <p>Lorem ipsum, dolor sit amet consectetur</p>
+              </div>
+            </div>
 
-      <img src="../img/portfolio/branding-3.jpg">
-      <img src="../img/zoom-in.svg">
-      <img src="../img/link-45deg.svg">
-      <p>Lorem ipsum, dolor sit amet consectetur</p>
+            <div class="portfolio-item">
+              <img src="../img/portfolio/branding-3.jpg" alt="branding">
+              <div class="portfolio-overlay">
+                <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                    fill="currentColor" class="bi bi-zoom-in"
+                    viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                      d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11M13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0" />
+                    <path
+                      d="M10.344 11.742q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1 6.5 6.5 0 0 1-1.398 1.4z" />
+                    <path fill-rule="evenodd"
+                      d="M6.5 3a.5.5 0 0 1 .5.5V6h2.5a.5.5 0 0 1 0 1H7v2.5a.5.5 0 0 1-1 0V7H3.5a.5.5 0 0 1 0-1H6V3.5a.5.5 0 0 1 .5-.5" />
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                    fill="currentColor" class="bi bi-link-45deg"
+                    viewBox="0 0 16 16">
+                    <path
+                      d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z" />
+                    <path
+                      d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z" />
+                  </svg>
+                </div>
+                <p>Lorem ipsum, dolor sit amet consectetur</p>
+              </div>
+            </div>
 
-      <img src="../img/portfolio/books-3.jpg">
-      <img src="../img/zoom-in.svg">
-      <img src="../img/link-45deg.svg">
-      <p>Lorem ipsum, dolor sit amet consectetur</p>
+            <div class="portfolio-item">
+              <img src="../img/portfolio/books-3.jpg" alt="books">
+              <div class="portfolio-overlay">
+                <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                    fill="currentColor" class="bi bi-zoom-in"
+                    viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                      d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11M13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0" />
+                    <path
+                      d="M10.344 11.742q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1 6.5 6.5 0 0 1-1.398 1.4z" />
+                    <path fill-rule="evenodd"
+                      d="M6.5 3a.5.5 0 0 1 .5.5V6h2.5a.5.5 0 0 1 0 1H7v2.5a.5.5 0 0 1-1 0V7H3.5a.5.5 0 0 1 0-1H6V3.5a.5.5 0 0 1 .5-.5" />
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                    fill="currentColor" class="bi bi-link-45deg"
+                    viewBox="0 0 16 16">
+                    <path
+                      d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z" />
+                    <path
+                      d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z" />
+                  </svg>
+                </div>
+                <p>Lorem ipsum, dolor sit amet consectetur</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!--Papildoma uzd 8-->
+      
+
+      <div id="Papildoma">
+        <h1>Papildoma Uzduotis 8</h1>
+        <button id="dark-light-mode">Šviesus/Tamsus režimas</button>
+      </div>
 
 
-      </main>
+    </main>
+    
   </body>
+
+  
 </html>
+

@@ -39,3 +39,20 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.classList.toggle("dark-mode-background");
   });
 });
+
+
+function updateClock() {
+  const now = new Date();  
+  const hours = String(now.getHours()).padStart(2, '0');  
+  const minutes = String(now.getMinutes()).padStart(2, '0');  
+  const seconds = String(now.getSeconds()).padStart(2, '0');  
+ 
+  const formattedTime = `${hours}:${minutes}:${seconds}`;
+ 
+  document.getElementById('clock').textContent = formattedTime;
+}
+
+// Atnaujinti laikrodį kas sekundę
+setInterval(updateClock, 1000);
+// Iš karto atnaujinti laiką, kad nedingtų pradinis vėlavimas
+updateClock();

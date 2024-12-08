@@ -749,3 +749,15 @@ header img {
   cursor: pointer;
   border-radius: 100px;
 }
+
+#Lab10-darbas {
+  width: 1000px;
+  margin: 0 auto;
+  padding-bottom: 20px;
+}
+
+#Lab10-darbas.svg-container{
+   margin-top: 20px;
+        
+}
+

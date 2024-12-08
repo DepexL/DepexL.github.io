@@ -750,14 +750,25 @@ header img {
   border-radius: 100px;
 }
 
-#Lab10-darbas {
+#Lab11-darbas {
   width: 1000px;
   margin: 0 auto;
   padding-bottom: 20px;
 }
 
-#Lab10-darbas.svg-container{
+#Lab11-darbas.svg-container{
    margin-top: 20px;
         
 }
 
+form {
+  max-width: 400px;
+  margin: 20px;
+}
+.error {
+  color: red;
+  font-size: 0.9em;
+}
+.result {
+  margin-top: 20px;
+}

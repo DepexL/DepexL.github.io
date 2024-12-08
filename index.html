@@ -24,7 +24,7 @@
     
     <nav id="nav-sidebar">
       <div id="Profile" class="sidebar">
-        <img src="/img/my-profile-img.jpg" alt="selfie">
+        <img src="img/my-profile-img.jpg" alt="selfie">
         <a id="Username" href="">Alex Smith</a>
 
         <nav class="nav-icons">
@@ -703,10 +703,10 @@
         <button id="dark-light-mode">Šviesus/Tamsus režimas</button>
       </div>
 
-      <!--10 Labaratorinis-->
+      <!--11 Labaratorinis-->
 
-      <div id="Lab10-darbas">
-        <h1>10 Labaratorinis Matematikos ir Grafikos Objektų Pavyzdys</h1>
+      <div id="Lab11-darbas">
+        <h1>11 Labaratorinis Matematikos ir Grafikos Objektų Pavyzdys</h1>
     <p>Formulė: </p>
     
     <!-- MathJax biblioteka, skirta atvaizduoti MathML formules -->
@@ -745,8 +745,51 @@
     </div>
 
     <!--Papildoma: -->
-    <h1>Interaktyvus Laikrodis</h1>
+    <h2>Papildoma: Interaktyvus Laikrodis</h2>
     <div id="clock"></div>
+      </div>
+
+      <!--Labaratorinis 12-->
+      <div id="Lab12-darbas">
+        <h1>Kontaktų Forma</h1>
+    <!-- Kontaktų forma Labaratorinis 12-->
+    <form id="contactForm">
+        <label for="name">Vardas:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="surname">Pavardė:</label><br>
+        <input type="text" id="surname" name="surname" required><br><br>
+
+        <label for="email">El. paštas:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="phone">Telefono numeris:</label><br>
+        <input type="text" id="phone" name="phone" required><br><br>
+
+        <label for="address">Adresas:</label><br>
+        <input type="text" id="address" name="address" required><br><br>
+
+        <!-- 5 klausimai su įvertinimais -->
+        <label for="question1">Kaip įvertintumėte mūsų svetainės dizainą (1-10):</label><br>
+        <input type="number" id="question1" name="question1" min="1" max="10" required><br><br>
+
+        <label for="question2">Kaip įvertintumėte paslaugų kokybę (1-10):</label><br>
+        <input type="number" id="question2" name="question2" min="1" max="10" required><br><br>
+
+        <label for="question3">Kaip įvertintumėte svetainės naudotojo patirtį (1-10):</label><br>
+        <input type="number" id="question3" name="question3" min="1" max="10" required><br><br>
+
+        <label for="question4">Kaip įvertintumėte informacijos aiškumą (1-10):</label><br>
+        <input type="number" id="question4" name="question4" min="1" max="10" required><br><br>
+
+        <label for="question5">Kaip įvertintumėte bendrą patirtį (1-10):</label><br>
+        <input type="number" id="question5" name="question5" min="1" max="10" required><br><br>
+
+        <button type="button" id="submitButton">Pateikti</button>
+    </form>
+
+    <!-- Rezultatų atvaizdavimas -->
+    <div class="result" id="result"></div>
       </div>
 
 

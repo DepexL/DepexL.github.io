@@ -57,13 +57,11 @@ setInterval(updateClock, 1000);
  
 updateClock();
 
-// Funkcija, kuri sujungia viską
+
 document.getElementById('submitButton').addEventListener('click', function () {
-  // Gaunama formos reikšmių objektas
   const form = document.getElementById('contactForm');
   const formData = new FormData(form);
 
-  // Sukuriamas JavaScript objektas rezultatų saugojimui
   const data = {
       name: formData.get('name'),
       surname: formData.get('surname'),
@@ -77,7 +75,24 @@ document.getElementById('submitButton').addEventListener('click', function () {
       question5: parseInt(formData.get('question5'), 10),
   };
 
-  // Skaičiuojamas vidurkis
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const phonePattern = /^[0-9]{9,12}$/;
+
+    if (!emailPattern.test(data.email)) {
+        alert('Neteisingas el. pašto adresas.');
+        return;
+    }
+
+    if (!phonePattern.test(data.phone)) {
+        alert('Neteisingas telefono numeris.');
+        return;
+    }
+
+    if (data.address.trim() === '') {
+        alert('Adresas negali būti tuščias.');
+        return;
+    }
+
   const average = (
       data.question1 +
       data.question2 +
@@ -86,10 +101,8 @@ document.getElementById('submitButton').addEventListener('click', function () {
       data.question5
   ) / 5;
 
-  // Rezultatų atvaizdavimas naršyklės terminale
   console.log(data);
 
-  // Rezultatų atvaizdavimas puslapyje
   const resultDiv = document.getElementById('result');
   resultDiv.innerHTML = `
       <p>Vardas: ${data.name}</p>
@@ -103,15 +116,20 @@ document.getElementById('submitButton').addEventListener('click', function () {
       <p>Kaip įvertintumėte informacijos aiškumą: ${data.question4}</p>
       <p>Kaip įvertintumėte bendrą patirtį: ${data.question5}</p>
       <p>Vidutinis įvertinimas: <span id="average">${average.toFixed(2)}</span></p>
+      <p>- ${data.name} ${data.surname} ${data.email}: <span id="average2">${average.toFixed(2)}</span></p>
   `;
 
-  // Spalvos pritaikymas pagal vidurkį
   const averageSpan = document.getElementById('average');
+  const averageSpan2 = document.getElementById('average2');
+
   if (average < 4) {
       averageSpan.style.color = 'red';
+      averageSpan2.style.color = 'red';
   } else if (average < 7) {
       averageSpan.style.color = 'orange';
+      averageSpan2.style.color = 'orange';
   } else {
       averageSpan.style.color = 'green';
+      averageSpan2.style.color = 'green';
   }
 });
